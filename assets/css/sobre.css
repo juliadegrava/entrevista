@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap");
+
+:root {
+    --cor-primaria: #8a2be2;
+    --cor-secundaria: #e6e6fa;
+    --cor-fundo: #fcfcfc;
+    --cor-texto-escuro: #4f4f4f;
+    --cor-texto-claro: #fff;
+    --cor-detalhe-escuro: #333333;
+    --padding-padrao: 80px 5%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Lexend", sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-escuro);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--cor-detalhe-escuro);
+}
+
+/* --- Cabeçalho e Navegação --- */
+
+.HeaderInterno {
+    background: linear-gradient(180deg,
+            var(--cor-secundaria) 0%,
+            var(--cor-fundo) 100%);
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+    position: relative;
+}
+
+.NavBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--cor-texto-claro);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+}
+
+.Logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cor-detalhe-escuro);
+    text-transform: uppercase;
+}
+
+.MenuNav {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.MenuNav a {
+    font-weight: 600;
+    color: var(--cor-detalhe-escuro);
+    padding: 5px 0;
+    position: relative;
+}
+
+.MenuNav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -8px;
+    left: 0;
+    background-color: var(--cor-primaria);
+    transition: width 0.3s ease-in-out;
+}
+
+.MenuNav a:hover::after {
+    width: 100%;
+}
+
+.MenuNav li:nth-child(1) a::after {
+    width: 100%;
+}
+
+.HeroHeroInterno {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.7);
+}
+
+.TituloPrincipalInterno {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--cor-detalhe-escuro);
+    margin-bottom: 0.5rem;
+    padding: 20px 0;
+}
+
+/* --- Seções de Conteúdo --- */
+
+.Secao {
+    padding: var(--padding-padrao);
+    text-align: center;
+}
+
+.Secao h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: var(--cor-detalhe-escuro);
+}
+
+.Secao p {
+    font-size: 1.1rem;
+    margin-bottom: 1em;
+}
+
+.ContainerTexto {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.Introducao .ContainerTexto {
+    background-color: var(--cor-texto-claro);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid var(--cor-primaria);
+}
+
+.DestaqueImportancia {
+    background-color: var(--cor-secundaria);
+}
+
+.DestaqueImportancia .ContainerTexto {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--cor-primaria);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ContainerTexto ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding: 10px 0;
+    font-size: 1.1rem;
+}
+
+.ContainerTexto ul li {
+    margin-bottom: 0.5em;
+}
+
+.ContainerTexto strong {
+    color: var(--cor-primaria);
+    font-weight: 600;
+}
+
+.ContainerFormacao {
+    border: 1px dashed var(--cor-primaria);
+    background-color: var(--cor-secundaria);
+}
+
+/* --- Foto de Destaque --- */
+
+.FotoDestaque {
+    background-color: var(--cor-fundo);
+    padding: 50px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.FotoDestaqueInterno {
+    padding: 30px 5%;
+}
+
+.ImagemPerfil {
+    width: 500px;
+    object-fit: cover;
+    border-radius: 40px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
+
+.ImagemPerfil:hover {
+    transform: scale(1.03);
+}
+
+.LegendaFoto {
+    font-style: italic;
+    color: var(--cor-texto-escuro);
+    font-size: 1rem;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* --- Rodapé (Footer) --- */
+
+.Footer {
+    background-color: var(--cor-detalhe-escuro);
+
+    padding: 25px 5%;
+
+    display: flex;
+
+    justify-content: space-around;
+    /* Distribui itens no footer */
+
+    align-items: center;
+
+    text-align: center;
+}
+
+.Creditos {
+    color: var(--cor-fundo);
+
+    font-size: 0.9rem;
+
+    font-weight: 400;
+}
+
+.BotoesSocial {
+    display: flex;
+
+    gap: 15px;
+}
+
+.BotaoSocial {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    background-color: var(--cor-texto-claro);
+
+    color: var(--cor-primaria);
+
+    font-size: 1.3rem;
+
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.BotaoSocial:hover {
+    background-color: var(--cor-primaria);
+
+    color: var(--cor-texto-claro);
+
+    transform: scale(1.1);
+}
+
+/* --- Media Queries (Responsividade) --- */
+
+@media (max-width: 768px) {
+    .HeaderInterno {
+        min-height: 25vh;
+    }
+
+    .NavBar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .MenuNav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .TituloPrincipalInterno {
+        font-size: 2.2rem;
+    }
+
+    .Secao {
+        padding: 40px 5%;
+    }
+
+    .ContainerTexto {
+        padding: 20px;
+    }
+
+    .ImagemPerfil {
+        width: 200px;
+        height: 200px;
+    }
+
+    .Footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

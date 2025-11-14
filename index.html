@@ -3,20 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Arte do Movimento</title>
+    <title>A Arte do Movimento - Fernanda Sartori</title>
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <head class="Header">
-        <h1>A Arte do Movimento</h1>
-        <h2>A Trajetória Inspiradora de Fernanda Sartori</h2>
-    </head>
-    <section>
-        <p>O presente trabalho tem como objetivo apresentar uma entrevista com a professora
-            Fernanda Sartori, 37 anos, profissional de Educação Física com atuação em dança 
-            e pilates. O intuito é compreender sua trajetória, as motivações que a levaram a 
-            seguir essa profissão e suas percepções sobre os desafios e recompensas de 
-            trabalhar com o movimento e o corpo humano.
-            </p>
-    </section>
+    <header class="Header">
+        <nav class="NavBar">
+            <a href="#" class="Logo">A Arte do Movimento</a>
+            <ul class="MenuNav">
+                <li><a href="./pages/sobre.html">Sobre</a></li>
+                <li><a href="./pages/contato.html">Entrevista</a></li>
+                <li><a href="./pages/galeria.html">Galeria</a></li>
+            </ul>
+        </nav>
+
+        <div class="Hero">
+            <h1 class="TituloPrincipal">A Arte do Movimento</h1>
+            <h2 class="Subtitulo">A Trajetória Inspiradora de Fernanda Sartori 🩰</h2>
+        </div>
+    </header>
+
+    <main>
+        <section id="sobre" class="Secao Introducao">
+            <div class="ContainerTexto">
+                <h3>Introdução: Uma Jornada Inspiradora</h3>
+                <p>O presente trabalho tem como objetivo apresentar uma entrevista com a professora
+                <strong>Fernanda Sartori</strong>, 37 anos, profissional de Educação Física com atuação em <strong>dança</strong> e <strong>pilates</strong>. O intuito é compreender sua trajetória, as motivações que a levaram a 
+                seguir essa profissão e suas percepções sobre os desafios e recompensas de 
+                trabalhar com o movimento e o corpo humano.</p>
+            </div>
+        </section>
+
+        <section class="Secao FotoDestaque">
+            <img src="./assets/img/fernanda.jpg" alt="Fernanda Sartori em movimento de dança ou pilates" class="ImagemPerfil">
+            <p class="LegendaFoto">Fernanda Sartori: Dedicação e Paixão pelo Movimento.</p>
+        </section>
+        
+        <section class="Secao DestaqueImportancia">
+            <div class="ContainerTexto">
+                <h3 id="importancia"><i class="fas fa-heartbeat"></i> A Importância da Educação Física e Dança</h3>
+                <p>A área de Educação Física e Dança promove o <strong>bem-estar</strong> e a <strong>qualidade de vida</strong>, unindo desenvolvimento físico, mental e expressão artística. Apesar de transformar vidas por meio do movimento, enfrenta desafios como a necessidade de constante dedicação e a falta de reconhecimento e valorização financeira.</p>
+            </div>
+        </section>
+        
+        <section id="menu-navegacao" class="Secao MenuNavegacao">
+            <h3><i class="fas fa-arrow-circle-down"></i> Vamos Começar a Navegar?</h3>
+            <p class="Slogan">Escolha uma seção para explorar a fundo a história de Fernanda.</p>
+            <div class="BotoesAcao">
+                <a href="./pages/sobre.html" class="Botao SecaoBotao"><i class="fas fa-user-circle"></i> Sobre Fernanda</a>
+                <a href="./pages/contato.html" class="Botao SecaoBotao"><i class="fas fa-comments"></i> Entrevista Completa</a>
+                <a href="./pages/galeria.html" class="Botao SecaoBotao"><i class="fas fa-images"></i> Galeria de Fotos</a>
+            </div>
+        </section>
+    <footer id="contato" class="Footer">
+        <p class="Creditos">© 2025 - Desenvolvido por <strong>Júlia Degrava</strong></p>
+        <div class="BotoesSocial">
+            <a href="mailto:degravajulia@gmail.com" target="_blank" class="BotaoSocial" aria-label="E-mail">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/juliadegrava" target="_blank" class="BotaoSocial" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/juliadegrava" target="_blank" class="BotaoSocial" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </footer>
 </body>
 </html>

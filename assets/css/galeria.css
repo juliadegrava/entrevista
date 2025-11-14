@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;700&display=swap");
+
+:root {
+    --cor-primaria: #8a2be2;
+    --cor-secundaria: #e6e6fa;
+    --cor-fundo: #fcfcfc;
+    --cor-texto-escuro: #4f4f4f;
+    --cor-texto-claro: #fff;
+    --cor-detalhe-escuro: #333333;
+    --padding-padrao: 80px 5%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Lexend", sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-escuro);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--cor-detalhe-escuro);
+}
+
+/* --- Cabeçalho e Navegação (Reutilização) --- */
+
+.HeaderInterno {
+    background: linear-gradient(180deg,
+            var(--cor-secundaria) 0%,
+            var(--cor-fundo) 100%);
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+    position: relative;
+}
+
+.NavBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--cor-texto-claro);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+}
+
+.Logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cor-detalhe-escuro);
+    text-transform: uppercase;
+}
+
+.MenuNav {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.MenuNav a {
+    font-weight: 600;
+    color: var(--cor-detalhe-escuro);
+    padding: 5px 0;
+    position: relative;
+}
+
+.MenuNav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -8px;
+    left: 0;
+    background-color: var(--cor-primaria);
+    transition: width 0.3s ease-in-out;
+}
+
+.MenuNav a:hover::after {
+    width: 100%;
+}
+
+/* Destaca a página "Galeria" como ativa */
+.MenuNav li:nth-child(3) a::after {
+    width: 100%;
+}
+
+.HeroHeroInterno {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.7);
+}
+
+.TituloPrincipalInterno {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--cor-detalhe-escuro);
+    margin-bottom: 0.5rem;
+    padding: 20px 0;
+}
+
+/* --- Seção da Galeria --- */
+
+.Secao {
+    padding: var(--padding-padrao);
+    text-align: center;
+}
+
+.Secao h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: var(--cor-detalhe-escuro);
+}
+
+.Secao h3 i {
+    color: var(--cor-primaria);
+    margin-right: 10px;
+}
+
+.Secao p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.ContainerGaleria {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid responsivo */
+    gap: 20px;
+    padding: 0 5%;
+}
+
+.ItemGaleria {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.ItemGaleria:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.ItemGaleria img {
+    width: 100%;
+    height: 300px; /* Altura fixa para manter o grid uniforme */
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.LegendaOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(138, 43, 226, 0.85); /* cor-primaria com transparência */
+    color: var(--cor-texto-claro);
+    padding: 15px 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+    transform: translateY(100%); /* Esconde a legenda inicialmente */
+    transition: transform 0.3s ease;
+}
+
+.ItemGaleria:hover .LegendaOverlay {
+    transform: translateY(0); /* Mostra a legenda no hover */
+}
+
+/* Estilo adicional para o efeito de escurecimento no hover */
+.ItemGaleria:hover img {
+    opacity: 0.8;
+}
+
+/* --- Rodapé (Footer - Reutilização) --- */
+
+.Footer {
+    background-color: var(--cor-detalhe-escuro);
+
+    padding: 25px 5%;
+
+    display: flex;
+
+    justify-content: space-around;
+    /* Distribui itens no footer */
+
+    align-items: center;
+
+    text-align: center;
+}
+
+.Creditos {
+    color: var(--cor-fundo);
+
+    font-size: 0.9rem;
+
+    font-weight: 400;
+}
+
+.BotoesSocial {
+    display: flex;
+
+    gap: 15px;
+}
+
+.BotaoSocial {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    background-color: var(--cor-texto-claro);
+
+    color: var(--cor-primaria);
+
+    font-size: 1.3rem;
+
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.BotaoSocial:hover {
+    background-color: var(--cor-primaria);
+
+    color: var(--cor-texto-claro);
+
+    transform: scale(1.1);
+}
+
+/* --- Media Queries (Responsividade) --- */
+
+@media (max-width: 768px) {
+    .HeaderInterno {
+        min-height: 25vh;
+    }
+
+    .NavBar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .MenuNav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .TituloPrincipalInterno {
+        font-size: 2.2rem;
+    }
+
+    .Secao {
+        padding: 40px 5%;
+    }
+
+    .ContainerGaleria {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+        padding: 0;
+    }
+}
